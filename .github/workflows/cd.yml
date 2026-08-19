@@ -22,7 +22,7 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            cd ~/CICD-test
+            cd ~/repo
             git pull origin main
             sudo docker compose down
             sudo docker compose up -d --build
