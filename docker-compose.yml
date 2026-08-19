@@ -1,0 +1,13 @@
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: front
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-front.conf:/etc/nginx/nginx.conf:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    
